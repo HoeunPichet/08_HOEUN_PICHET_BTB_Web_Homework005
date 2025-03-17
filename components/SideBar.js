@@ -9,7 +9,7 @@ export default function SideBar() {
         <header className="flex flex-col items-center">
           <Image
             src="/images/profile.png"
-            className="object-cover"
+            className="object-cover rounded-full border-4 border-primary"
             width={150}
             height={150}
             alt="Profile"

@@ -5,21 +5,19 @@ import { getAllBooks } from "@/service/bookService";
 export default async function BookCategories() {
   const DATA = await getAllBooks();
   const BOOKS = await DATA.payload;
-  console.log(BOOKS);
+
   return (
     <>
-      <ContentHeader
-        title="All Books"
-        type="book"
-        description="Filter by Categories"
-      />
-      <div className="mt-44 grid grid-cols-2 w-full gap-x-10 gap-y-40">
+      <ContentHeader title="All Books" type="book" />
+      <div className="mt-36 grid grid-cols-2 w-full gap-x-10 gap-y-40">
         {BOOKS.map((item) => {
           return (
             <BookCard
               key={item.id}
+              id={item.id}
               title={item.book_title}
               image={item.image}
+              description={item.description}
             />
           );
         })}

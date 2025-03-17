@@ -4,9 +4,9 @@ import MainCard from "@/components/MainCard";
 export default function Home() {
   return (
     <>
-      <article className="flex flex-col w-full">
+      <article className="flex flex-col w-full h-full">
         <ContentHeader title={"Homepage"} />
-        <div className="mt-20 flex w-full justify-center gap-20">
+        <div className="h-full items-center flex w-full justify-center gap-20">
           <MainCard
             title="Book"
             src="/images/book-card.jpg"

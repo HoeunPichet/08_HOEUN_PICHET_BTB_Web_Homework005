@@ -15,8 +15,8 @@ export default function MainCard({ ...props }) {
         <Image
           src={props.src}
           className="object-cover"
-          width={250}
-          height={400}
+          width={260}
+          height={450}
           alt={props.title}
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black/25 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all px-3">
