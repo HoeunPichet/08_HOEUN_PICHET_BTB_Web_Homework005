@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
           <SideBar />
           <article className="grow bg-slate-200 pt-7 px-12 grid grid-cols-1 content-start gap-7">
             <SearchButton />
-            <section className="bg-white rounded-tl-3xl rounded-tr-3xl h-[calc(100vh_-_104px)] overflow-auto p-7">
+            <section className="bg-white rounded-tl-3xl rounded-tr-3xl min-h-[calc(100vh_-_104px)] p-7">
               {children}
             </section>
           </article>

@@ -1,13 +1,12 @@
 "use client";
 
-import { navigation } from "@/data/navigation";
+import { navigation } from "@/data/modules";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function NavLink() {
   const pathname = usePathname();
-
   return (
     <>
       <div className="flex flex-col gap-2 mt-8">
@@ -18,8 +17,10 @@ export default function NavLink() {
               href={item.url}
               className={
                 "flex gap-3 w-full items-center px-5 rounded-xl py-2 hover:font-medium " +
-                (pathname.startsWith(item.url)
-                  ? "bg-slate-200 font-medium"
+                (pathname == item.url && item.url.length == 1
+                  ? "bg-slate-200"
+                  : pathname.startsWith(item.url) && item.url.length != 1
+                  ? "bg-slate-200"
                   : "hover:bg-slate-100")
               }
             >

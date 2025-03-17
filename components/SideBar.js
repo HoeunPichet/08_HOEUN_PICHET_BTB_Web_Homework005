@@ -1,11 +1,11 @@
-import { navigation } from "@/data/navigation";
+import { navigation } from "@/data/modules";
 import Image from "next/image";
 import NavLink from "./NavLink";
 
 export default function SideBar() {
   return (
     <>
-      <aside className="grid grid-cols-1 h-screen overflow-auto px-6 py-7 w-full max-w-sm content-start shadow-xl">
+      <aside className="grid grid-cols-1 h-screen sticky top-0 overflow-auto px-6 py-7 w-full max-w-sm content-start shadow-xl">
         <header className="flex flex-col items-center">
           <Image
             src="/images/profile.png"
