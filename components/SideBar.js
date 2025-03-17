@@ -1,17 +1,24 @@
 import { navigation } from "@/data/navigation";
 import Image from "next/image";
+import NavLink from "./NavLink";
 
 export default function SideBar() {
   return (
     <>
-      {navigation.map((item) => {
-        return (
-          <div key={item.id}>
-            <Image src={item.icon} width={20} height={20} alt={item.title} />
-            <p>{item.title}</p>
-          </div>
-        );
-      })}
+      <aside className="grid grid-cols-1 h-screen overflow-auto px-6 py-7 w-full max-w-sm content-start shadow-xl">
+        <header className="flex flex-col items-center">
+          <Image
+            src="/images/profile.png"
+            className="object-cover"
+            width={150}
+            height={150}
+            alt="Profile"
+          />
+          <h3 className="text-lg text-default mt-3">Black Monster</h3>
+          <p className="text-primary text-lg">blackmonster@gmail.com</p>
+        </header>
+        <NavLink />
+      </aside>
     </>
   );
 }

@@ -8,7 +8,15 @@ module.exports = {
     "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        default: "#0B3954",
+        primary: "#087E8B",
+      },
+      maxWidth: {
+        wmax: "2400px",
+      },
+    },
   },
   darkMode: "class",
   plugins: [
@@ -18,30 +26,6 @@ module.exports = {
           small: "4px",
           medium: "8px",
           large: "12px",
-        },
-      },
-      themes: {
-        light: {
-          colors: {
-            default: "#47A992",
-            primary: "#47A992",
-            secondary: "#25A244",
-            foreground: "#324C5B",
-            success: "#17c964",
-            warning: "#f5a524",
-            danger: "#f31260",
-          },
-        },
-        dark: {
-          colors: {
-            default: "#47A992",
-            primary: "#47A992",
-            secondary: "#25A244",
-            foreground: "#324C5B",
-            success: "#17c964",
-            warning: "#f5a524",
-            danger: "#f31260",
-          },
         },
       },
     }),

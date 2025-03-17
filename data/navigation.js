@@ -3,19 +3,19 @@ export const navigation = [
     id: 1,
     title: "Home",
     icon: "/icon/home.svg",
-    url: "#",
+    url: "/",
   },
   {
     id: 2,
     title: "Book Categories",
     icon: "/icon/book.svg",
-    url: "#",
+    url: "/book-categories",
   },
   {
     id: 3,
     title: "Old-School Cartoons",
     icon: "/icon/emoji-happy.svg",
-    url: "#",
+    url: "/old-school-cartoons",
   },
   {
     id: 4,
