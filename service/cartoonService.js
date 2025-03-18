@@ -15,6 +15,20 @@ export async function getAllCartoons() {
   }
 }
 
+export async function getCartoonById(id) {
+  try {
+    const response = await fetch("/api/cartoon/" + id, {
+      cache: "force-cache",
+      next: { revalidate: 5 },
+    });
+
+    const result = await response.json();
+    return result;
+  } catch (err) {
+    return [];
+  }
+}
+
 export async function getAllCartoonGenre() {
   try {
     const response = await fetch(
