@@ -5,7 +5,7 @@ import NavLink from "./NavLink";
 export default function SideBar() {
   return (
     <>
-      <aside className="grid grid-cols-1 h-screen sticky top-0 overflow-auto px-6 py-7 w-full max-w-sm content-start shadow-xl">
+      <aside className="grid grid-cols-1 h-screen sticky top-0 overflow-auto px-4 lg:px-6 py-7 w-full max-w-20 lg:max-w-sm content-start shadow-xl">
         <header className="flex flex-col items-center">
           <Image
             src="/images/profile.png"
@@ -14,8 +14,12 @@ export default function SideBar() {
             height={150}
             alt="Profile"
           />
-          <h3 className="text-lg text-default mt-3">Black Monster</h3>
-          <p className="text-primary text-lg">blackmonster@gmail.com</p>
+          <h3 className="hidden lg:block text-lg text-default mt-3">
+            Black Monster
+          </h3>
+          <p className="hidden lg:block text-primary text-lg">
+            blackmonster@gmail.com
+          </p>
         </header>
         <NavLink />
       </aside>

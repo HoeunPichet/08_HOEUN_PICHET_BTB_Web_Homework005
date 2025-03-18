@@ -16,7 +16,7 @@ export default function NavLink() {
               key={item.id}
               href={item.url}
               className={
-                "flex gap-3 w-full items-center px-5 rounded-xl py-2 hover:font-medium " +
+                "flex gap-3 w-full justify-center lg:justify-start items-center lg:px-5 rounded-xl py-2 hover:font-medium " +
                 (pathname == item.url && item.url.length == 1
                   ? "bg-slate-200"
                   : pathname.startsWith(item.url) && item.url.length != 1
@@ -25,7 +25,9 @@ export default function NavLink() {
               }
             >
               <Image src={item.icon} width={20} height={20} alt={item.title} />
-              <p className="line-clamp-1 text-default">{item.title}</p>
+              <p className="hidden lg:block line-clamp-1 text-default">
+                {item.title}
+              </p>
             </Link>
           );
         })}
@@ -33,7 +35,7 @@ export default function NavLink() {
         <div className="mt-5">
           <Link
             href="#"
-            className="flex gap-3 w-full items-center px-5 rounded-xl py-2 bg-slate-200 hover:font-medium"
+            className="flex gap-3 w-full justify-center lg:justify-start items-center lg:px-5 rounded-xl py-2 bg-slate-200 hover:font-medium"
           >
             <Image
               src="/icon/setting.svg"
@@ -41,7 +43,9 @@ export default function NavLink() {
               height={20}
               alt="Settings"
             />
-            <p className="line-clamp-1 text-default">Settings</p>
+            <p className="hidden lg:block line-clamp-1 text-default">
+              Settings
+            </p>
           </Link>
         </div>
       </div>
