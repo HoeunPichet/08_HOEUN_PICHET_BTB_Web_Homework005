@@ -6,17 +6,17 @@ export default function MainCard({ ...props }) {
     <>
       <Link
         href={props.url}
-        className="relative group w-fit h-fit shadow-2xl rounded-[1.75rem] overflow-hidden shadow-gray-500"
+        className="relative group w-fit h-fit shadow-2xl border-4 border-default/50 outline outline-default/70 rounded-[2.6rem] overflow-hidden shadow-gray-500"
       >
-        <div className="absolute top-3 left-3 z-10 flex gap-1 items-center bg-white rounded-2xl justify-center px-2 py-0.5">
+        <div className="absolute top-3 left-3 z-10 flex gap-1 items-center bg-white shadow-2xl rounded-2xl justify-center px-2 py-1">
           <Image src="/icon/tag.svg" width={14} height={14} alt="Tag" />
           <p className="text-primary text-xs font-medium">{props.title}</p>
         </div>
         <Image
           src={props.src}
           className="object-cover"
-          width={260}
-          height={450}
+          width={300}
+          height={550}
           alt={props.title}
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black/25 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all px-3">

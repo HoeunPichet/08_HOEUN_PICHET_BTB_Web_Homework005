@@ -7,7 +7,12 @@ export default function CartoonCard({ ...props }) {
     <>
       <div className="flex flex-col gap-5 w-full rounded-2xl">
         <Link
-          href={"/old-school-cartoons/" + props.id}
+          href={
+            "/old-school-cartoons/" +
+            props.id +
+            "?type=cartoon&title=" +
+            props.title
+          }
           className="w-full shadow-[0px_0px_10px] shadow-default rounded-2xl overflow-hidden"
         >
           <Image

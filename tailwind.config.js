@@ -12,6 +12,7 @@ module.exports = {
       colors: {
         default: "#0B3954",
         primary: "#087E8B",
+        danger: "#C81D25",
       },
       maxWidth: {
         wmax: "2400px",

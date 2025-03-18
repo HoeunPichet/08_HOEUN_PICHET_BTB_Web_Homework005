@@ -16,7 +16,9 @@ export default function BookCard({ ...props }) {
             />
           </div>
           <Link
-            href={"/book-categories/" + props.id}
+            href={
+              "/book-categories/" + props.id + "?type=book&title=" + props.title
+            }
             className="bg-primary/30 hover:bg-primary transition-all group rounded-3xl py-2"
           >
             <span className="text-primary px-5 whitespace-nowrap group-hover:text-white">
