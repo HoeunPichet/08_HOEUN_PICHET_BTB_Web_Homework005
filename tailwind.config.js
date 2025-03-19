@@ -15,7 +15,7 @@ module.exports = {
         danger: "#C81D25",
       },
       maxWidth: {
-        wmax: "2400px",
+        wmax: "100%",
       },
     },
   },

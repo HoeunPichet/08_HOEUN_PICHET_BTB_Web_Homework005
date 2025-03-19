@@ -17,10 +17,13 @@ export async function getAllCartoons() {
 
 export async function getCartoonById(id) {
   try {
-    const response = await fetch("/api/cartoon/" + id, {
-      cache: "force-cache",
-      next: { revalidate: 5 },
-    });
+    const response = await fetch(
+      "https://nextjs-homework005.vercel.app/api/cartoon/" + id,
+      {
+        cache: "force-cache",
+        next: { revalidate: 5 },
+      }
+    );
 
     const result = await response.json();
     return result;
@@ -31,13 +34,10 @@ export async function getCartoonById(id) {
 
 export async function getAllCartoonGenre() {
   try {
-    const response = await fetch(
-      "https://nextjs-homework005.vercel.app/api/cartoon_genre",
-      {
-        cache: "force-cache",
-        next: { revalidate: 5 },
-      }
-    );
+    const response = await fetch("/api/cartoon_genre", {
+      cache: "force-cache",
+      next: { revalidate: 5 },
+    });
 
     const result = await response.json();
     return result;

@@ -37,7 +37,7 @@ export default function Breadcrumb() {
           <p>{type != "cartoon" ? "Book Categories" : "Old School Cartoons"}</p>
         </Link>
         <Image src="/icon/arrow.svg" width={10} height={10} alt="Arrow Icon" />
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="#" className="flex items-center gap-3">
           <Image
             src={
               type != "cartoon"
