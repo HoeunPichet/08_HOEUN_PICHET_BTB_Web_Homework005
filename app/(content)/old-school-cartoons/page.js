@@ -1,32 +1,55 @@
+"use client";
 import CartoonCard from "@/components/CartoonCard";
 import ContentHeader from "@/components/ContentHeader";
-import { getAllCartoons } from "@/service/cartoonService";
+import { getAllCartoons, getCartoonGenreById } from "@/service/cartoonService";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
-export default async function OldSchoolCartoons() {
-  const RESPONSE = await getAllCartoons();
-  const CARTOONS = await RESPONSE.payload;
+export default function OldSchoolCartoons() {
+  const [cartoons, setCartoons] = useState("");
+  const [title, setTitle] = useState("");
+  const params = useSearchParams();
+  const genreId = params.get("genre") ? params.get("genre") : "";
+  const search = params.get("search") ? params.get("search") : "";
 
-  const fetchCartoonByGenre = (genre) => {
-    console.log(genre);
-
-    // const RESPONSE = await getBookCategoryById(cateId);
-    // const TITLE = await RESPONSE?.payload?.book_cate_name;
-    // setTitle(typeof TITLE !== "undefined" ? TITLE : "All Books");
-    // const RESBOOK = await getAllBooks(cateId);
-    // const DATA = await RESBOOK.payload;
-    // setBooks(DATA);
+  const fetchTitle = async () => {
+    const RESPONSE = await getCartoonGenreById(genreId);
+    const TITLE = await RESPONSE?.payload?.cartoon_genre;
+    setTitle(typeof TITLE !== "undefined" ? TITLE : "Old School Cartoons");
   };
 
+  const fetchCartoon = async () => {
+    console.log(genreId, search);
+
+    const RESPONSE = await getAllCartoons(genreId, search);
+    const DATA = await RESPONSE.payload;
+    setCartoons(DATA);
+  };
+
+  useEffect(() => {
+    fetchTitle();
+    fetchCartoon();
+  }, []);
+
+  const fetchCartoonByGenre = async (genId) => {
+    const RESPONSE = await getCartoonGenreById(genId);
+    const TITLE = await RESPONSE?.payload?.cartoon_genre;
+    setTitle(typeof TITLE !== "undefined" ? TITLE : "Old School Cartoons");
+
+    const RESCARTOON = await getAllCartoons(genId, search);
+    const DATA = await RESCARTOON.payload;
+    setCartoons(DATA);
+  };
   return (
     <>
       <ContentHeader
-        title="Old School Cartoons"
+        title={title}
         type="cartoon"
-        // queryId={fetchCartoonByGenre}
+        queryId={fetchCartoonByGenre}
       />
-      <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 w-full gap-10 xl:gap-x-16 gap-y-20">
-        {CARTOONS &&
-          CARTOONS.map((item) => {
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 w-full gap-10 xl:gap-x-16 gap-y-20">
+        {cartoons &&
+          cartoons.map((item) => {
             return (
               <CartoonCard
                 key={item.id}

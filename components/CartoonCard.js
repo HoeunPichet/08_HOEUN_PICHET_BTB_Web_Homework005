@@ -13,11 +13,11 @@ export default function CartoonCard({ ...props }) {
             "?type=cartoon&title=" +
             props.title
           }
-          className="w-full shadow-[0px_0px_10px] shadow-default rounded-2xl overflow-hidden"
+          className="w-full shadow-[0px_0px_10px] shadow-default rounded-2xl"
         >
           <Image
             src={props.image}
-            className="w-full h-full hover:contrast-150 transition-all max-h-[22rem] hover:scale-110 rounded-2xl object-cover"
+            className="w-full h-full hover:contrast-150 transition-all max-h-[22rem] rounded-2xl object-cover"
             width={314}
             height={490}
             alt={props.title}

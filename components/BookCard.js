@@ -8,7 +8,7 @@ export default function BookCard({ ...props }) {
         <div className="flex flex-col justify-end gap-5 relative">
           <div className="absolute bottom-14 left-0 w-full pr-2 group">
             <Image
-              className="max-h-[14rem] w-full hover:scale-125 transition-all object-cover rounded-2xl shadow-[8px_8px_0px] shadow-default"
+              className="max-h-[14rem] border-2 w-full hover:scale-125 transition-all object-cover rounded-2xl shadow-[8px_8px_1px_0px] shadow-default"
               src={props.image}
               width={170}
               height={200}
